@@ -98,6 +98,17 @@ class BookStore:
             infix: A string    
         '''
         start_time = time.time()
+        bookFile = open('books.txt', errors='ignore')
+        foundBooks = 0
+        location = 0
+        for i in bookFile:
+            i = i.replace("\n", " ")
+            if infix in i:
+                print(i, "found at location: ", location)
+                foundBooks += 1
+            location += 1
+        if foundBooks == 0:
+            print(infix, " not found in catalog.")
         elapsed_time = time.time() - start_time
         print(f"searchBookByInfix Completed in {elapsed_time} seconds")
 
