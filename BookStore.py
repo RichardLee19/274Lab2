@@ -83,7 +83,7 @@ class BookStore:
             i: positive integer    
         '''
         # Validating the index. Otherwise it  crashes
-        if i >= 0 and i < self.bookCatalog.size():
+        if 0 <= i < self.bookCatalog.size():
             start_time = time.time()
             s = self.bookCatalog.get(i)
             self.shoppingCart.add(s)
@@ -112,7 +112,15 @@ class BookStore:
         elapsed_time = time.time() - start_time
         print(f"searchBookByInfix Completed in {elapsed_time} seconds")
 
-    def removeFromShoppingCart(self) :
+    def bestSeller(self):
+        # start_time = time.time()
+        # bestSeller = self.shoppingCart.MaxQueue()
+        # elapsed_time = time.time() - start_time
+        # print(f"bestSeller {u} Completed in {elapsed_time} seconds")
+        pass
+
+
+def removeFromShoppingCart(self) :
         '''
         removeFromShoppingCart: remove one book from the shoppung cart  
         '''
@@ -121,4 +129,6 @@ class BookStore:
             u = self.shoppingCart.remove()
             elapsed_time = time.time() - start_time
             print(f"removeFromShoppingCart {u} Completed in {elapsed_time} seconds")
+
+
 
